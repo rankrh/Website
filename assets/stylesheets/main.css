@@ -1,0 +1,214 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+/* Backgrounds */
+
+#background-strip {
+    background-color: blue;
+    background-image: url("temp_back.jpg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    height: 400px;
+}
+/* Container */
+.container {
+    margin: 0 auto;
+    width: 100%;
+}
+
+/* Grid */
+*,
+*:before,
+*:after{
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.grid {
+    margin: 0 auto;
+    width: 960px;
+}
+
+.grid {
+    padding:15px;
+}
+.col-1-5,
+.col-4-5 {
+    display: inline-block;
+    vertical-align: top;
+}
+.col-1-5 {
+    width: 20%;
+}
+
+.col-4-5 {
+    width: 80%;
+}
+
+/* Rows */
+
+.row {
+    min-width: 960px;
+    padding: 12px 0 48px 0;
+}
+
+/* Header */
+
+.primary-header {
+    padding: 12px;   
+}
+
+.primary-nav,
+.secondary-nav {
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    text-align: center;
+    margin-top: 108px;
+    margin-bottom: 12px;
+}
+
+.primary-nav li,
+.secondary-nav li {
+    display: inline-block;
+    margin: 0 40px; 
+    vertical-align: center;
+    font-size: 24px;
+    font-weight: 700;    
+}
+
+.primary-nav img {
+    border-radius: 50%;
+    height: 192px;
+    margin-top: -96px;
+    vertical-align: top;
+}
+.secondary-nav img {
+    border-radius: 50%;
+    height: 144px;
+    margin-top: -72px;
+    vertical-align: top;
+
+}
+
+/* Links */
+
+a {
+    text-decoration: None;
+    color: #1e2744;
+}
+a:hover {
+    color: #575555;
+}
+
+/* Style */
+
+body {
+    font: 300 16px/20px "Noto Sans", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #1e2744;
+    background: #888;
+    background: -webkit-linear-gradient(#9ea9cf #f6f1d3);
+    background:    -moz-linear-gradient(#9ea9cf, #f6f1d3);
+    background:         linear-gradient(#9ea9cf, #f6f1d3);  
+}
+
+h1 {
+    font-style: italic;
+    color: #575555;
+}
+
+h2 {
+    font-size: 18px;
+    line-height: 27px;
+}
+
+h3 {
+    font-size: 24px;
+    line-height: 36px;
+    font-weight: 700;
+}
+h5 {
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 48px;
+}
+
+/* Resume */
+
+.left-title,
+.left-text {
+    text-align: left;
+    height: 100%;
+}
+
+.right-title,
+.right-text {
+    text-align: right;
+    height: 100%;
+}
+
+.right-title,
+.left-title {
+    padding: 48px 0;
+}
+
+#skills ul {
+    padding: 12px 0;
+}
+#skills li {
+    float: left;
+    padding: 12px;
+}
+
+.position {
+    padding: 12px;
+}
