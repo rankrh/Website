@@ -48,6 +48,10 @@ table {
 }
 
 
+li {
+    display: inline-block;
+}
+
 /* Backgrounds */
 
 #background-strip {
@@ -55,12 +59,11 @@ table {
     background-image: url("temp_back.jpg");
     background-repeat: no-repeat;
     background-size: 100%;
-    height: 400px;
+    height: 352px;
 }
 /* Container */
 .container {
     margin: 0 auto;
-    width: 100%;
 }
 
 /* Grid */
@@ -84,9 +87,11 @@ table {
 .col-4-5 {
     display: inline-block;
     vertical-align: top;
+    /* border: 2px solid green; */
 }
 .col-1-5 {
     width: 20%;
+    /* border: 2px solid green; */
 }
 
 .col-4-5 {
@@ -106,6 +111,13 @@ table {
     padding: 12px;   
 }
 
+ul {
+    white-space: nowrap;
+}
+
+
+/* Navigation */
+
 .primary-nav,
 .secondary-nav {
     font-size: 14px;
@@ -119,13 +131,21 @@ table {
 
 .primary-nav li,
 .secondary-nav li {
-    display: inline-block;
     margin: 0 40px; 
     vertical-align: center;
     font-size: 24px;
-    font-weight: 700;    
+    font-weight: 700; 
+    display: inline-block;  
 }
 
+nav {
+    text-align: center;
+}
+.nav li {
+    display: inline-block;
+    margin: 0 10px;
+    vertical-align: top;
+}
 .primary-nav img {
     border-radius: 50%;
     height: 192px;
@@ -182,23 +202,26 @@ h5 {
     line-height: 48px;
 }
 
+
+/* Footer */
+.footer {
+    opacity: 1; // Leave this as 1
+    background-color: rgba(0,0,0,0.6);
+  }
+
+footer img {
+    height: 36px;
+}
 /* Resume */
+.position {
+    padding: 20px 0;
+}
 
-.left-title,
-.left-text {
+.text-left,
+.text-right {
+    height: 100%;
+    padding: 0 18px;
     text-align: left;
-    height: 100%;
-}
-
-.right-title,
-.right-text {
-    text-align: right;
-    height: 100%;
-}
-
-.right-title,
-.left-title {
-    padding: 48px 0;
 }
 
 #skills ul {
@@ -209,6 +232,18 @@ h5 {
     padding: 12px;
 }
 
-.position {
-    padding: 12px;
+/* Projects */
+
+.video-container {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 51%;
+}
+.video {
+    width: 100%;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0; top: 0;
 }
