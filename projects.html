@@ -19,22 +19,44 @@
             </nav>
         </header>
         <section class="grid" id="projects">
-            <section>
-                <section class="project">
-                    <h3><a href="https://github.com/rankrh/Mountain-Project">Mountain Project Route Finder</a></h3>
-                    <p>Improved search function for a popular rock climbing website with Python, MySQL, pandas, and kivy.  Used natural language processing and Bayesian statistics to expand on built-in search capabilities and categorize climbing routes.</p>
-                    <div class="video-container">
-                        <iframe class="video" width="854" height="480" src="https://www.youtube.com/embed/N_6gbT_i4VY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    </div>
-                </section>
+            <section class="project">
+                <article>
+                    <h5>
+                        <a href="https://github.com/rankrh/Mountain-Project">Mountain Project Route Finder</a>
+                    </h5>
+                    <p>The ultimate purpose of the program is to help users optimize their time by finding climbing areas based on their preferences.</p>
+                    <iframe class="video" src="https://www.youtube.com/embed/N_6gbT_i4VY" frameborder="0" allowfullscreen></iframe>
+                    <p>By combining metrics such as distance to user, type/difficulty of routes, and concentration of routes, we can find where climbers can make best use of their time. MP lets users search by a variety of different metrics, including route quality, number of pitches, route type, and difficulty, as well as by geographic location. This approach has limitations. This program not only improves upon some of these metrics, such as the way that route quality is measured, but also adds new functionality.</p>
+                    <h3>Web Scraper</h3>
+                    <img class="row-img" src="assets/images/projects/database.png">
+                    <p>The first step of the process is to create a database of route information. Mountain Project is organized into areas and routes, with most of the important information on the routes page.  I still had to keep track of which routes were in which areas, so I created an SQL database with one table for route level pages and another for area level pages.</p>
+                    <p>Routes are obviously what I was mostly interested in, so I grabbed the name, url, rating, location, type of climb, grade of climb, and length for each route, then gave each a unique id.</p>
+                    <p>Since climbing ratings are different depending on the type of climbing and the location, I also converted the ratings into a linear system, 0 being the easiest rating for a style and moving up as the routes got harder.  For example, there are 77 different possible Yosemite Decimal System (YDS) ratings on Mountain project, so the easiest would be a 0 and the hardest a 76.</p>
+                    <p>At this stage, I also preprocessed the text for each route.  Each route has a name, most have descriptions, and some have user comments.  I wanted to try to categorize routes based on the type of terrain by looking at this text, something that Mountain Project doesn’t do yet.  To get the text ready to analyze, I combined these three sources of user-input into one block of text, then standardized and tokenized it, removed  stop words, and ran it through a Porter stemmer.  I held all of the words and the id of the route they pertained to in another table of my database.</p>
+                    <h3>Bayesian Rating System</h3>
+                    <p>After scraping the routes I needed, I analyzed the data.  I wanted to improve the way route quality was measured, as the current star-system ust gave each route its average rating.  I decided to use Bayesian statistics to get a more accurate measure.</p>
+                    <p>The drawbacks of using the simple average are that highly rated routes with only a few ratings tend to appear higher than they should and routes with no user-ratings are shunted to the bottom of the list.</p>
+                    <p>My Bayesian rating system helps to mitigate these effects.  The weighted rating works by first finding the average rating for all routes and adding a number of “phantom voters” who all rate the route as average.  For routes with only a few ratings, the effect is to dramatically revert towards the mean, but as more people rate it, this effect lessens.</p>
+                    <img class="in-text" src="assets/images/projects/bayes_rating.png">
+                    <h3>Clustering</h3>
+                    <p>By clustering routes based on geographic area and similarity of styles, this program helps to promote routes that are near other routes similar to them. This helps by ignoring routes that are exactly what you want - but 50 miles from any other route you might want to do.</p>
+                    <h3>Terrain</h3>
+                    <p>Climbers often have a type of route - e.g. overhangs, slab, cracks - that they like more than others. Using natural language processing of route descriptions and comments, this program attempts to categorize each climb into one or more of these terrain styles. This is another metric by which users can select their preferred type of climbing.</p>
+                    <h3>Styles</h3>
+                    <p>MP's search function only allows users to search by one climbing style at a time - bouldering, sport, etc. This program allows users to select any number of routes that they like, and finds the best areas that have any of these styles. For example, I may enjoy sport climbing and bouldering, and would want to find nearby areas that have either. Additionally, in general the grade people can climb changes depending on the type of route, and this function allows users to specify grade in a style-specific way.</p>
+                </article>
             </section>
         </section>
         <footer>
-            <ul>
-                <li><a href="https://github.com/rankrh"><img src="assets/images/contact/GitHub-Mark-120px-plus.png"></a></li>
-                <li><a href="mailto:rankrh@gmail.com"><img src="assets/images/contact/email-logo-as-md.png"></a></li>
-                <li><a href="https://www.linkedin.com/in/bob-rank-9795bb133/"><img src="assets/images/contact/In-2C-121px-R.png"></a></li>
-            </ul>
+            <section class="grid">
+                <nav class="nav">
+                    <ul>
+                    <li><a href="https://github.com/rankrh"><img src="assets/images/contact/GitHub-Mark-120px-plus.png"></a></li>
+                        <li><a href="mailto:rankrh@gmail.com"><img src="assets/images/contact/email-logo-as-md.png"></a></li>
+                        <li><a href="https://www.linkedin.com/in/bob-rank-9795bb133/"><img src="assets/images/contact/In-2C-121px-R.png"></a></li>
+                    </ul>
+                </nav>
+            </section>
         </footer>
-        </body>
+    </body>
 </html>
