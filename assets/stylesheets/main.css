@@ -55,6 +55,7 @@ li {
 /* Container */
 .container {
     margin: 0 auto;
+    overflow: auto;
 }
 
 /* Grid */
@@ -258,6 +259,13 @@ h5 {
     line-height: 48px;
 }
 
+h4 {
+    font-size: 22px;
+    line-height: 33px;
+    font-weight: 400;
+    text-align: center;
+
+}
 
 /* Footer */
 
@@ -299,13 +307,34 @@ footer img {
 
 /* Skills */
 
-#skills li{
-    display: inline-block;
+.skills {
+    width: 80%;
+    height: 100%;
+    margin:0 auto;
 }
-.skill {
+
+.skills > li {
+    width: 20%;
+    height: 20%;
+    float: left;
+}
+
+.skills > li > ul {
+    display: block;
+    margin-top: 36px;
+}
+
+.skills > li > ul > li {
+    display: block;
+  }
+.skill img {
     border-radius: 50%;
     height: 144px;
-    vertical-align: top;
     border: 12px solid #1e2744;
-    margin: 24px;
+    margin: 0 auto 12px auto;
+    display: block;
+}
+.skill p {
+    text-align: center;
+    white-space: normal;
 }
