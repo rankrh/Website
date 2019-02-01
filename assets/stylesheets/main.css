@@ -96,11 +96,16 @@ li {
 .img {
     padding: 48px 0;
 }
-.row-img {
+.back-img {
     width: 100%;
     min-width: 1024px;
     max-height: 352px;
     object-fit: cover;
+    padding: 24px 0;
+}
+
+.row-img {
+    width: 100%;
     padding: 24px 0;
 }
 
@@ -154,13 +159,11 @@ body {
     background: -webkit-linear-gradient(#9ea9cf #ffffff);
     background:    -moz-linear-gradient(#9ea9cf, #ffffff);
     background:         linear-gradient(#9ea9cf, #ffffff);      
-  
 }
 
 ul {
     white-space: nowrap;
 }
-
 
 /* Navigation */
 
@@ -171,20 +174,17 @@ ul {
     letter-spacing: 0.5px;
     text-transform: uppercase;
     text-align: center;
-    margin-top: 108px;
+    margin-top: 92px;
     margin-bottom: 12px;
-    border: 1px solid green;
 }
 
 .primary-nav li,
 .secondary-nav li {
+    width: 192px;
     vertical-align: center;
     font-size: 24px;
     font-weight: 700; 
-    display: inline-block; 
 }
-
-
 
 nav {
     text-align: center;
@@ -200,12 +200,12 @@ nav {
     margin-top: -96px;
     vertical-align: top;
 }
+
 .secondary-nav img {
     border-radius: 50%;
     height: 144px;
     margin-top: -72px;
     vertical-align: top;
-
 }
 
 /* Links */
@@ -230,8 +230,6 @@ body {
     width: 768px;
     margin-left: auto;
     margin-right: auto;
-    border: 1px solid green;
-
 }
 p {
     padding: 12px 0;
@@ -289,13 +287,6 @@ footer img {
     text-align: left;
 }
 
-#skills ul {
-    padding: 12px 0;
-}
-#skills li {
-    float: left;
-    padding: 12px;
-}
 
 /* Projects */
 
@@ -304,4 +295,17 @@ footer img {
     margin: 24px auto 24px auto;
     width: 400px;
     height: 225px;
+}
+
+/* Skills */
+
+#skills li{
+    display: inline-block;
+}
+.skill {
+    border-radius: 50%;
+    height: 144px;
+    vertical-align: top;
+    border: 12px solid #1e2744;
+    margin: 24px;
 }
