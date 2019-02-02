@@ -47,7 +47,6 @@ table {
 	border-spacing: 0;
 }
 
-
 li {
     display: inline-block;
 }
@@ -100,7 +99,7 @@ li {
 .back-img {
     width: 100%;
     min-width: 1024px;
-    max-height: 352px;
+    max-height: 400px;
     object-fit: cover;
     padding: 24px 0;
 }
@@ -148,10 +147,62 @@ li {
     padding: 16px;
 }
 
+.grid {
+    padding: 16px;
+    width: 768px;
+    margin-left: auto;
+    margin-right: auto;
+}
+p {
+    padding: 12px 0;
+    font-size: 18px;
+}
+
+h1 {
+    font-style: italic;
+    color: #575555;
+}
+
+h2 {
+    font-size: 18px;
+    line-height: 27px;
+}
+
+h3 {
+    font-size: 24px;
+    line-height: 36px;
+    font-weight: 700;
+    padding-top: 12px;
+}
+h5 {
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 48px;
+}
+
+.floating {
+    font-size: 72px;
+    color: white;
+    position: fixed;
+    left: 200px;
+    top: 300px;
+}
+
+h4 {
+    font-size: 22px;
+    line-height: 33px;
+    font-weight: 400;
+    text-align: center;
+
+}
+
 /* Header */
 
 body {
     width: 100%;
+    font: 300 16px/20px "Noto Sans", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #1e2744;
+
 }
 .primary-header {
     min-width: 1024px;
@@ -217,54 +268,6 @@ a {
 }
 a:hover {
     color: #575555;
-}
-
-/* Style */
-
-body {
-    font: 300 16px/20px "Noto Sans", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-    color: #1e2744;
-}
-
-.grid {
-    padding: 16px;
-    width: 768px;
-    margin-left: auto;
-    margin-right: auto;
-}
-p {
-    padding: 12px 0;
-    font-size: 18px;
-}
-
-h1 {
-    font-style: italic;
-    color: #575555;
-}
-
-h2 {
-    font-size: 18px;
-    line-height: 27px;
-}
-
-h3 {
-    font-size: 24px;
-    line-height: 36px;
-    font-weight: 700;
-    padding-top: 12px;
-}
-h5 {
-    font-size: 32px;
-    font-weight: 700;
-    line-height: 48px;
-}
-
-h4 {
-    font-size: 22px;
-    line-height: 33px;
-    font-weight: 400;
-    text-align: center;
-
 }
 
 /* Footer */
