@@ -19,17 +19,17 @@
             </nav>
         </header>
         <section class="grid" id="projects">
-            <section class="project">
-                <article>
-                    <!-- Summary -->
-                    <h5>
-                        <a href="https://github.com/rankrh/Mountain-Project">Mountain Project Route Finder</a>
-                    </h5>
-                    <p>The ultimate purpose of the program is to help users optimize their time by finding climbing areas based on their preferences.</p>
-                    <iframe class="video" src="https://www.youtube.com/embed/N_6gbT_i4VY" frameborder="0" allowfullscreen></iframe>
-                    <p>By combining metrics such as distance to user, type/difficulty of routes, and concentration of routes, we can find where climbers can make best use of their time. MP lets users search by a variety of different metrics, including route quality, number of pitches, route type, and difficulty, as well as by geographic location. This approach has limitations. This program not only improves upon some of these metrics, such as the way that route quality is measured, but also adds new functionality.</p>
+            <article id='mountain-project'>
+                <!-- Summary -->
+                <h5>
+                    <a href="https://github.com/rankrh/Mountain-Project">Mountain Project Route Finder</a>
+                </h5>
+                <p>The ultimate purpose of the program is to help users optimize their time by finding climbing areas based on their preferences.</p>
+                <iframe class="video" src="https://www.youtube.com/embed/N_6gbT_i4VY" frameborder="0" allowfullscreen></iframe>
+                <p>By combining metrics such as distance to user, type/difficulty of routes, and concentration of routes, we can find where climbers can make best use of their time. MP lets users search by a variety of different metrics, including route quality, number of pitches, route type, and difficulty, as well as by geographic location. This approach has limitations. This program not only improves upon some of these metrics, such as the way that route quality is measured, but also adds new functionality.</p>
+                <span id="mp"></span>
+                <span class="read-more" id="read-more-mp">
                     <img class="full-width" src="assets/images/projects/ui.jpg">
-
                     <!-- Scraping -->
                     <h3>Web Scraper</h3>
                     <p>The first step of the process is to create a database of route information. Mountain Project is organized into areas and routes, with most of the important information on the routes page.  I still had to keep track of which routes were in which areas, so I created an SQL database with one table for route level pages and another for area level pages.</p>
@@ -70,8 +70,40 @@
                     <p>I created a simple and elegant user-interface that lets users select routes with as much precision as they want.  The best routes are spit out with links to the Mountain Project page, using all of the above metrics to create a composite score.</p>
                     <img class="in-text" src="assets/images/projects/pref.jpg">
 
-                </article>
-            </section>
+                </span>
+                <button onclick="ReadMore('mp', 'read-more-mp', 'mp-btn')" id="mp-btn">Read More</button>
+            </article>  
+            <article id='dancerator'>
+                <!-- Summary -->
+                <h5>
+                    <a href="https://github.com/rankrh/dancerator">The Dancerator</a>
+                </h5>
+                <p>Creating a dance playlist is easy, but finding the best track order can be hard. This program uses Spotify's danceability and tempo metrics to do the hard work for you, and creates an optimally ordered playlist in your Spotify account.  Using DJ recommendations and informal surveys, I designed a sorting algorithm that appropriately orders the tracks.</p>
+                <img class="row-img" src="assets/images/projects/reorder.png">
+                <span id="dance"></span>
+                <span class="read-more" id="read-more-dance">
+                    <!-- Acoustic Attritbutes -->
+                    <h3>Acoustic Attributes</h3>
+                    <p>Spotify's 'Acoustic Attributes' are data about tracks that reflect either definite traits about the track or probabilities that a track fits     certain parameters. For example, metrics like ‘duration’ measures the length of the track in milliseconds.  Other features, like ‘acousticness’, indicate the probability that a track is, for example, acoustic.  Still others, like ‘mode’ are Boolean; 0 for minor, 1 for major.</p>
+                    
+                    <!-- Tempo -->
+                    <h3>Tempo</h3>
+                    <p>For dance playlists there should be a periodic range in tempos, with slow songs appearing roughly every ten songs.  To achieve this, I split the tracks into even sections that represent one period in the tempo-wave, then divide those sections into up and down slope sections.  Sorting and concatenating the two sorted frames results in the periodicity we want.</p>
+
+                    <!-- Danceability -->
+                    <h3>Danceability</h3>
+                    <p>Danceability is a metric that ranges from 0 to 1 and measures how danceable a track is, 1 being more danceable.  In general, the trend of the playlist should be from high danceability to low danceability, but the wave-like form of the tempo should be preserved as much as possible.</p>
+                    <p>My algorithm orders tracks at symmetrical parts of the wave in order from highest to lowest danceability.  While the tempo waveform is partially destroyed in the process, the overall periodic variability is maintained.</p>
+                    
+                    <!-- UI -->
+                    <h3>CLI</h3>
+                    <img class="in-text" src="assets/images/projects/cli.png">
+                    <p>I used click to create a simple CLI.  The script requires a username to initialize, then prompts the user for the playlist they want to order and the new name.  After sorting the playlist, the user is prompted to save the new playlist to their Spotify account.  The user is then given a preview of the playlist and a link to the new, sorted version.</p>
+
+                </span>
+                <button onclick="ReadMore('dance', 'read-more-dance', 'dance-btn')" id="dance-btn">Read More</button>
+
+            </article>              
         </section>
         <footer>
             <nav class="nav">
@@ -82,5 +114,24 @@
                 </ul>
             </nav>
         </footer>
+        <script>
+            function ReadMore(elementId, textId, btnId) {
+                var dots = document.getElementById(elementId);
+                var moreText = document.getElementById(textId);
+                var btnText = document.getElementById(btnId);
+            
+                if (dots.style.display === "none") {
+                    dots.style.display = "inline";
+                    btnText.innerHTML = "Read more"; 
+                    moreText.style.display = "none";
+                }
+                else {
+                    dots.style.display = "none";
+                    btnText.innerHTML = "Read less"; 
+                    moreText.style.display = "inline";
+                }
+            }
+        </script>
     </body>
 </html>
+
